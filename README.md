@@ -1,4 +1,17 @@
+## Description
+...
+
+## Usage
+### General Usage
+...
 ## Installation
+
+To install project dependencies, and install the CLI globally in editable mode:
+```bash
+make install
+```
+
+or
 
 Install the project dependencies:
 
@@ -6,7 +19,7 @@ Install the project dependencies:
 uv sync
 ```
 
-Install the CLI globally in editable mode:
+and install the CLI:
 
 ```bash
 uv tool install -e .
