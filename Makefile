@@ -1,7 +1,8 @@
 .PHONY: run test coverage lint format fix check
 
-run:
-	uv run uvicorn src.app.main:app --reload
+install:
+	uv sync
+	uv tool install -e .
 
 test:
 	uv run pytest -v
