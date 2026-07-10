@@ -1,38 +1,21 @@
-## Description
-...
-
-## Usage
-### General Usage
+# Package Name
 ...
 ## Installation
-
-To install project dependencies, and install the CLI globally in editable mode:
+### Prerequisites
+- [`uv`](https://docs.astral.sh/uv/) — Python package/tool manager
+- `make` (optional, only needed for `make install`)
+  
+**Quick install:**
 ```bash
 make install
 ```
 
-or
-
-Install the project dependencies:
-
+**Manual:**
 ```bash
 uv sync
-```
-
-and install the CLI:
-
-```bash
 uv tool install -e .
 ```
 
-Verify the installation:
-
-```bash
-cli-name --help
-```
-
-To uninstall:
-
-```bash
-uv tool uninstall cli-name
-```
+Verify: `devi --help`
+Uninstall: `uv tool uninstall devi`
+## Usage
