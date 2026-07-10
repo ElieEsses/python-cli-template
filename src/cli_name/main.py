@@ -20,3 +20,5 @@ def add(a: int, b: int, verbose: bool = False):
     if verbose:
         typer.echo(f"Adding {a} and {b}")
     typer.echo(result)
+
+

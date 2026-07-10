@@ -1,11 +1,14 @@
-.PHONY: install run lint format test fix ci
-
-install:
-	uv sync
-	uv tool install -e .
+.PHONY: run test coverage lint format fix check
 
 run:
-	uv run edev --help
+	uv run uvicorn src.app.main:app --reload
+
+test:
+	uv run pytest -v
+
+coverage:
+	uv run coverage run -m pytest
+	uv run coverage report -m
 
 lint:
 	uv run ruff check .
@@ -14,13 +17,16 @@ format:
 	uv run ruff format .
 
 fix:
-	uv run ruff check . 
 	uv run ruff format .
+	uv run ruff check . --fix
 
-test:
-	uv run pytest
-
-ci:
+check:
 	uv run ruff check .
-	uv run ruff format --check .
-	uv run pytest
+	uv run pytest -q
+
+clean:
+	rm -rf .coverage
+	rm -rf htmlcov
+	rm -rf .ruff_cache
+	rm -rf .pytest_cache
+	find . -type d -name '__pycache__' -exec rm -rf {} +
